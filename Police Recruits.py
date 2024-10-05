@@ -7,8 +7,8 @@ for i in a:
         cnt+=1
         if i>0:
             officers+=i
-    else:
-               officers-=1
+            continue
+        officers-=1
 print (cnt)
 
 
