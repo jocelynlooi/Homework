@@ -5,10 +5,12 @@ officers=0
 for i in a:
     if i== -1 and officers==0:
         cnt+=1
-        if i>0:
-            officers+=i
-            continue
-        officers-=1
-print (cnt)
+        continue
+    if i>0:
+        officers+=i
+        continue
+    officers-=1
+
+print(cnt)
 
 
