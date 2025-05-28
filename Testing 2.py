@@ -1,13 +1,28 @@
-def f(n) :
-    if n <= 2:
-        return 1
+while True:
+    try:
+        s = input()
+    except EOFError:
+        break
+
+    if s.count('@') != 1:
+        print("NO");
+        continue
+
+    if (s[0] in {'@', '.'} or s[-1] in {'@', '.'}):
+        print("NO");
+        continue
+
+    if (s.find("@.") !=-1 or s.find(".@") !=-1):
+        print("NO");
+        continue
+
+    p = s.find("@");
+    q = s.find(".", p + 1);
+
+
+    if (q==-1):
+        print("NO")
     else:
-        return f(n-1) + f(n-2)
+        print("YES")
 
-n = int(input())
-ans = []
-for _ in range(n):
-    num = int(input())
-    ans.append(f(num))
-
-print('\n'.join(map(str, ans)))
+    print('NO' if q == -1 else 'YES')
